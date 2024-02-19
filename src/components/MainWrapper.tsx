@@ -1,17 +1,32 @@
-import { cn } from "@/utils/cn";
-import { type PropsWithChildren } from "react";
+import { cn } from "@/lib/utils/cn";
+import { DetailedHTMLProps, FC, HTMLAttributes, ReactNode, JSX } from "react";
 
-export default function MainWrapper(
-  props: PropsWithChildren<{ className?: string }>,
-): JSX.Element {
+type HTMLElementProps = DetailedHTMLProps<
+  HTMLAttributes<HTMLElement>,
+  HTMLElement
+>;
+
+/**
+ * Main Wrapper Component
+ *
+ * @param props Main Wrapper props
+ * @returns JSX.Element
+ */
+const MainWrapper: FC<HTMLElementProps> = (props): JSX.Element => {
   return (
     <main
+      {...props}
       className={cn(
-        "flex min-h-screen flex-col items-center justify-center text-black",
+        "flex min-h-screen w-screen flex-col items-center justify-center p-24",
         props.className,
       )}
     >
       {props.children}
     </main>
   );
-}
+};
+
+/**
+ * Export the component
+ */
+export default MainWrapper;

@@ -7,15 +7,15 @@ type HTMLParaProps = DetailedHTMLProps<
 >;
 
 /**
- * Error message component
+ * Success message component
  *
  * @returns JSX.Element
  */
-const ErrorMessage: FC<HTMLParaProps> = (props): JSX.Element => {
+const SuccessMessage: FC<HTMLParaProps> = (props): JSX.Element => {
   return (
     <p
       {...props}
-      className={cn("text-center text-sm text-red-600", props.className)}
+      className={cn("text-center text-sm text-green-600", props.className)}
     >
       {props.children}
     </p>
@@ -25,4 +25,4 @@ const ErrorMessage: FC<HTMLParaProps> = (props): JSX.Element => {
 /**
  * Export the component
  */
-export default ErrorMessage;
+export default SuccessMessage;
